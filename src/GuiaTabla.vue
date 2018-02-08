@@ -1,9 +1,40 @@
 <template>
   <v-container fluid>
-  <v-data-table
+    <v-card>
+    <v-card-title>
+      PRODUCCIÓN CIENTÍFICA
+      <v-spacer></v-spacer>
+      <v-btn-toggle v-model="button">
+                    <v-btn flat>
+                      Artículos
+                    </v-btn>
+                    <v-btn flat>
+                      Libros
+                    </v-btn>
+                    <v-btn flat>
+                      Capítulos de libro
+                    </v-btn>
+                    <v-btn flat>
+                      Trabajos en eventos
+                    </v-btn>
+                    <v-btn flat>
+                      Otras producciones científicas
+                    </v-btn>
+                  </v-btn-toggle>
+    <!-- <v-text-field
+    append-icon="search"
+    label="Buscar"
+    single-line
+    hide-details
+    v-model="search"
+    > -->
+    </v-text-field>
+  </v-card-title>
+    <v-data-table
       :headers="headers"
       :items="items"
       :pagination.sync="pagination"
+      :search="search"
       class="elevation-3"
       item-key="titulo"
       hide-actions
@@ -42,7 +73,8 @@
   </v-data-table>
   <div class="text-xs-center pt-2">
       <v-pagination v-model="pagination.page" :length="pages"></v-pagination>
-    </div>
+  </div>
+    </v-card>
   </v-container>
 </template>
 <script>
@@ -50,6 +82,7 @@ export default {
   data () {
     return {
       search: '',
+      button: 0,
       pagination: {},
       selected: [],
       headers: [
