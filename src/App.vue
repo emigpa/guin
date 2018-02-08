@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout row justify-space-between>
-      <v-flex sm12>
+      <v-flex xl8 lg10 md12 sm12 xs12>
         <v-card>
           <chart>
           </chart>

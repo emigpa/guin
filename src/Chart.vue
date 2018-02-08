@@ -9,14 +9,17 @@
           <!-- <h2 class="subheading">Datos de SIGEVA-UNSAM</h2> -->
         </div>
       </v-card-title>
+      <v-layout row justify-space-around>
+        <v-flex xl8 lg8 md10 sm10 xs12>
       <v-card-media class="pa-3" contain>
         <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors"></column-chart>
       </v-card-media>
+    </v-flex>
+  </v-layout>
     </v-card>
   </v-container>
 </template>
 <script>
-import Chart from 'frappe-charts/dist/frappe-charts.min.esm'
 export default {
   props: ['sigevaData'],
   data () {

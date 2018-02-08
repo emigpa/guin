@@ -5,36 +5,31 @@
       PRODUCCIÓN CIENTÍFICA
       <v-spacer></v-spacer>
       <v-btn-toggle v-model="button">
-                    <v-btn flat>
-                      Artículos
-                    </v-btn>
-                    <v-btn flat>
-                      Libros
-                    </v-btn>
-                    <v-btn flat>
-                      Capítulos de libro
-                    </v-btn>
-                    <v-btn flat>
-                      Trabajos en eventos
-                    </v-btn>
-                    <v-btn flat>
-                      Otras producciones científicas
-                    </v-btn>
-                  </v-btn-toggle>
-    <!-- <v-text-field
-    append-icon="search"
-    label="Buscar"
-    single-line
-    hide-details
-    v-model="search"
-    > -->
-    </v-text-field>
+        <v-layout row justify-space-around>
+          <v-flex sm12 xs12>
+        <v-btn flat small>
+          Artículos
+        </v-btn>
+        <v-btn flat small>
+          Libros
+        </v-btn>
+        <v-btn flat small>
+          Capítulos de libro
+        </v-btn>
+        <v-btn flat small>
+          Trabajos en eventos
+        </v-btn>
+        <v-btn flat small>
+          Otras producciones científicas
+        </v-btn>
+      </v-flex>
+      </v-layout>
+      </v-btn-toggle>
   </v-card-title>
     <v-data-table
       :headers="headers"
       :items="items"
       :pagination.sync="pagination"
-      :search="search"
       class="elevation-3"
       item-key="titulo"
       hide-actions
@@ -81,7 +76,6 @@
 export default {
   data () {
     return {
-      search: '',
       button: 0,
       pagination: {},
       selected: [],
