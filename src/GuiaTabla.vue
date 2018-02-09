@@ -27,8 +27,9 @@
       </v-btn-toggle>
   </v-card-title>
     <v-data-table
+      v-if="button === 0"
       :headers="headers"
-      :items="items"
+      :items="sigevaData.articulos"
       :pagination.sync="pagination"
       class="elevation-3"
       item-key="titulo"
@@ -42,12 +43,46 @@
         <td>{{ props.item.anio }}</td>
       </tr>
     </template>
-    <template slot="no-data">
+    <!-- <template slot="no-data">
       <v-alert :value="true" color="error" icon="warning">
         No se encontraron Artículos en el banco de datos de SIGEVA-UNSAM.
         <br>
         Contáctese con sigevaconsultas@unsam.edu.ar.
       </v-alert>
+    </template> -->
+    <template slot="expand" slot-scope="props">
+      <v-container grid-list-sm id="listdetail">
+        <v-card flat class="blue-grey lighten-4">
+          <v-layout row wrap>
+            <v-flex xs6>
+              <v-card-text>Revista: <em>{{ props.item.revista }}</em></br> Pais: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
+              </v-card-text>
+            </v-flex>
+            <v-flex xs6>
+              <v-card-text>ISSN: {{ props.item.issn }}</br> URL: {{ props.item.url }}</br> DOI: {{ props.item.doi }}
+              </v-card-text>
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-container>
+    </template>
+  </v-data-table>
+    <v-data-table
+    v-if="button === 1"
+      :headers="headers"
+      :items="sigevaData.articulos"
+      :pagination.sync="pagination"
+      class="elevation-3"
+      item-key="titulo"
+      hide-actions
+    >
+    <template slot="items" slot-scope="props">
+      <tr @click="props.expanded = !props.expanded">
+        <td>{{ props.item.titulo }}</td>
+        <td>{{ props.item.autores }}</td>
+        <!-- <td>{{ props.item.editorial }}</td>
+        <td>{{ props.item.anio }}</td> -->
+      </tr>
     </template>
     <template slot="expand" slot-scope="props">
       <v-container grid-list-sm id="listdetail">
@@ -105,7 +140,8 @@ export default {
           value: 'anio'
         }
       ],
-      items: [
+      sigevaData: {
+        articulos: [
         {
           titulo: `The Organization of Pessimism: Profane Illumination and Anthropological Materialism in Walter Benjamin`,
           autores: 'Ibarlucía, Ricardo',
@@ -216,10 +252,11 @@ export default {
         }
       ]
     }
+    }
   },
   computed: {
     pages () {
-      return this.items.length > 0 ? Math.ceil(this.items.length / 5) : 0
+      return this.sigevaData.articulos.length > 0 ? Math.ceil(this.sigevaData.articulos.length / 5) : 0
     }
   }
 }

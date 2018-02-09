@@ -27,10 +27,10 @@ export default {
       stacked: {
         data: [
           {name: 'Artículos', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}},
-          {name: 'Libros', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}},
-          {name: 'Capítulos de libro', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}},
-          {name: 'Trabajos en eventos', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}},
-          {name: 'Otras producciones científicas', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}}
+          {name: 'Libros', data: {'2014': 2, '2015': 2, '2016': 1, '2017': 2}},
+          {name: 'Capítulos de libro', data: {'2014': 2, '2015': 0, '2016': 1, '2017': 1}},
+          {name: 'Trabajos en eventos', data: {'2014': 1, '2015': 1, '2016': 1, '2017': 1}},
+          {name: 'Otras producciones científicas', data: {'2014': 5, '2015': 4, '2016': 4, '2017': 1}}
         ],
         colors: ['#222831', '#003459', '#028090', '#02C39A', '#FCE38A']
       },

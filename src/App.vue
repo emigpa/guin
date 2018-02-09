@@ -31,13 +31,13 @@ export default {
   },
   methods: {
     getSigevaData () {
-      axios
-      .get('http://localhost:8080/api/guin',
-        {params: {
-          cuil: this.cuil
-        }})
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+      // axios
+      // .get('http://localhost:8080/api/guin',
+      //   {params: {
+      //     cuil: this.cuil
+      //   }})
+      // .then(res => console.log(res.data))
+      // .catch(err => console.log(err))
     }
   }
 }
