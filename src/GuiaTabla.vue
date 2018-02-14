@@ -37,6 +37,8 @@
     >
     <template slot="items" slot-scope="props">
       <tr @click="props.expanded = !props.expanded">
+        <v-icon v-if="!props.expanded">expand_more</v-icon>
+        <v-icon v-if="props.expanded">expand_less</v-icon>
         <td>{{ props.item.titulo }}</td>
         <td>{{ props.item.autores }}</td>
         <td>{{ props.item.editorial }}</td>
@@ -66,11 +68,11 @@
         </v-card>
       </v-container>
     </template>
-  </v-data-table>
+    </v-data-table>
     <v-data-table
     v-if="button === 1"
       :headers="headers"
-      :items="sigevaData.articulos"
+      :items="sigevaData.libros"
       :pagination.sync="pagination"
       class="elevation-3"
       item-key="titulo"
@@ -78,10 +80,12 @@
     >
     <template slot="items" slot-scope="props">
       <tr @click="props.expanded = !props.expanded">
+        <v-icon v-if="!props.expanded">expand_more</v-icon>
+        <v-icon v-if="props.expanded">expand_less</v-icon>
         <td>{{ props.item.titulo }}</td>
         <td>{{ props.item.autores }}</td>
-        <!-- <td>{{ props.item.editorial }}</td>
-        <td>{{ props.item.anio }}</td> -->
+        <td>{{ props.item.editorial }}</td>
+        <td>{{ props.item.anio }}</td>
       </tr>
     </template>
     <template slot="expand" slot-scope="props">
@@ -89,18 +93,122 @@
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
             <v-flex xs6>
-              <v-card-text>Revista: <em>{{ props.item.revista }}</em></br> Pais: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
+              <v-card-text>Pais: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
             <v-flex xs6>
-              <v-card-text>ISSN: {{ props.item.issn }}</br> URL: {{ props.item.url }}</br> DOI: {{ props.item.doi }}
-              </v-card-text>
+              <v-card-text>ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
             </v-flex>
           </v-layout>
         </v-card>
       </v-container>
     </template>
-  </v-data-table>
+    </v-data-table>
+    <v-data-table
+    v-if="button === 2"
+      :headers="headers"
+      :items="sigevaData.pdl"
+      :pagination.sync="pagination"
+      class="elevation-3"
+      item-key="titulo"
+      hide-actions
+    >
+    <template slot="items" slot-scope="props">
+      <tr @click="props.expanded = !props.expanded">
+        <v-icon v-if="!props.expanded">expand_more</v-icon>
+        <v-icon v-if="props.expanded">expand_less</v-icon>
+        <td>{{ props.item.titulo }}</td>
+        <td>{{ props.item.autores }}</td>
+        <td>{{ props.item.editorial }}</td>
+        <td>{{ props.item.anio }}</td>
+      </tr>
+    </template>
+    <template slot="expand" slot-scope="props">
+      <v-container grid-list-sm id="listdetail">
+        <v-card flat class="blue-grey lighten-4">
+          <v-layout row wrap>
+            <v-flex xs6>
+              <v-card-text>Pais: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
+              </v-card-text>
+            </v-flex>
+            <v-flex xs6>
+              <v-card-text>ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-container>
+    </template>
+    </v-data-table>
+    <v-data-table
+    v-if="button === 3"
+      :headers="headers"
+      :items="sigevaData.tep"
+      :pagination.sync="pagination"
+      class="elevation-3"
+      item-key="titulo"
+      hide-actions
+    >
+    <template slot="items" slot-scope="props">
+      <tr @click="props.expanded = !props.expanded">
+        <v-icon v-if="!props.expanded">expand_more</v-icon>
+        <v-icon v-if="props.expanded">expand_less</v-icon>
+        <td>{{ props.item.titulo }}</td>
+        <td>{{ props.item.autores }}</td>
+        <td>{{ props.item.editorial }}</td>
+        <td>{{ props.item.anio }}</td>
+      </tr>
+    </template>
+    <template slot="expand" slot-scope="props">
+      <v-container grid-list-sm id="listdetail">
+        <v-card flat class="blue-grey lighten-4">
+          <v-layout row wrap>
+            <v-flex xs6>
+              <v-card-text>Pais: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
+              </v-card-text>
+            </v-flex>
+            <v-flex xs6>
+              <v-card-text>ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-container>
+    </template>
+    </v-data-table>
+    <v-data-table
+    v-if="button === 4"
+      :headers="headers"
+      :items="sigevaData.dem"
+      :pagination.sync="pagination"
+      class="elevation-3"
+      item-key="titulo"
+      hide-actions
+    >
+    <template slot="items" slot-scope="props">
+      <tr @click="props.expanded = !props.expanded">
+        <v-icon v-if="!props.expanded">expand_more</v-icon>
+        <v-icon v-if="props.expanded">expand_less</v-icon>
+        <td>{{ props.item.titulo }}</td>
+        <td>{{ props.item.autores }}</td>
+        <td>{{ props.item.editorial }}</td>
+        <td>{{ props.item.anio }}</td>
+      </tr>
+    </template>
+    <template slot="expand" slot-scope="props">
+      <v-container grid-list-sm id="listdetail">
+        <v-card flat class="blue-grey lighten-4">
+          <v-layout row wrap>
+            <v-flex xs6>
+              <v-card-text>Pais: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
+              </v-card-text>
+            </v-flex>
+            <v-flex xs6>
+              <v-card-text>ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-container>
+    </template>
+    </v-data-table>
   <div class="text-xs-center pt-2">
       <v-pagination v-model="pagination.page" :length="pages"></v-pagination>
   </div>
@@ -115,6 +223,12 @@ export default {
       pagination: {},
       selected: [],
       headers: [
+        {
+          text: '',
+          align: 'left',
+          sortable: false,
+          value: ''
+        },
         {
           text: 'Título',
           align: 'left',
@@ -250,8 +364,109 @@ export default {
           doi: '',
           areadc: 'Filosofía, Ética y Religión'
         }
-      ]
-    }
+      ],
+      libros: [
+        { titulo: `Qué es la belleza y otros ensayos`,
+          autores: 'Guerrero, Luis Juan (Autor);  Ibarlucía, Ricardo (estudio preliminar, seleccíon, notas y apéndice)',
+          anio: '2017',
+          editorial: 'Editorial Biblos, Colección Pasajes (Serie Mayor)',
+          isbn: '978-987-691-561-8',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        },
+        { titulo: `Belleza sin aura. El surrealismo y la teoría materialista del arte de Walter Benjamin`,
+          autores: 'Ibarlucía, Ricardo',
+          anio: '2017',
+          editorial: 'Fondo de Cultura Económica',
+          isbn: '950-557-692-7',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        },
+        { titulo: `Hechos y valores en filosofía teórica, filosofía práctica y filosofía del arte`,
+          autores: 'Ibarlucía, Ricardo;  Perez, Diana',
+          anio: '2016',
+          editorial: 'Centro de Investigaciones Filosóficas/Sociedad Argentina de Análisis Filosófico',
+          isbn: '978-987-29834-4-4',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        },
+        { titulo: `Críticas profanas`,
+          autores: 'Canal Feijóo, Bernardo (autor);  Ibarlucía, Ricardo (estudio preliminar, selección de textos y notas)1,2;  Fabbian, Gisela (estudio preliminar, selección de textos y notas)',
+          anio: '2015',
+          editorial: '17grises',
+          isbn: '978-987-1724-14-7',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        },
+        { titulo: `Qué es la belleza, seguido de Escenas de la vida estética y Torso de la vida estética`,
+          autores: 'Guerrero, Luis Juan (Autor);  Ibarlucía, Ricardo (prólogo y edición)',
+          anio: '2015',
+          editorial: 'Biblos',
+          isbn: '978-987-1501-18-2',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        },
+        { titulo: `Hechos y valores`,
+          autores: 'Pérez, Diana Inés (comp.)1;  Ibarlucía, Ricardo (comp.)',
+          anio: '2015',
+          editorial: 'Centro de Investigaciones Filosóficas/Sociedad Argentina de Análisis Filosófico',
+          isbn: '978-987-29834-2-0',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        },
+        { titulo: `Exterior Arte. Estética y formas de vida`,
+          autores: 'Pérez, Diana Inés (comp.)1;  Ibarlucía, Ricardo (comp.)',
+          anio: '2014',
+          editorial: 'Biblos',
+          isbn: '950-786-447-4',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        }
+      ],
+      pdl: [
+        {
+          titulo: `Exterior Arte. Estética y formas de vida`,
+          autores: 'Pérez, Diana Inés (comp.)1;  Ibarlucía, Ricardo (comp.)',
+          anio: '2014',
+          editorial: 'Biblos',
+          isbn: '950-786-447-4',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        }
+      ],
+      tep: [
+        {
+          titulo: `Exterior Arte. Estética y formas de vida`,
+          autores: 'Pérez, Diana Inés (comp.)1;  Ibarlucía, Ricardo (comp.)',
+          anio: '2014',
+          editorial: 'Biblos',
+          isbn: '950-786-447-4',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+        }
+      ],
+      dem: [
+        {
+          titulo: `Exterior Arte. Estética y formas de vida`,
+          autores: 'Pérez, Diana Inés (comp.)1;  Ibarlucía, Ricardo (comp.)',
+          anio: '2014',
+          editorial: 'Biblos',
+          isbn: '950-786-447-4',
+          pais: 'Argentina',
+          url: '',
+          areadc: 'Filosofía, Ética y Religión'
+          }
+        ]
+      }
     }
   },
   computed: {
