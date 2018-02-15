@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from './store'
 import App from './App.vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.css'
@@ -34,5 +35,6 @@ const router = new VueRouter({
 
 new Vue({
   el: '#app',
+  store,
   router
 })

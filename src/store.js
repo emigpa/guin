@@ -1,37 +1,11 @@
-<template>
-  <v-container fluid>
-    <v-layout row justify-space-between>
-      <v-flex xl8 lg10 md12 sm12 xs12>
-        <v-card>
-          <chart>
-          </chart>
-          <guia-tabla sigevadata="this.sigevadata">
-          </guia-tabla>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
-</template>
-<script>
-import axios from 'axios'
-import GuiaTabla from './GuiaTabla.vue'
-import Chart from './Chart.vue'
-export default {
-  components: {
-    'guia-tabla': GuiaTabla,
-    'chart': Chart
-  },
-  props: ['cuil'],
-  data () {
-    return {}
-  },
-  mounted () {
-    this.getSigevaData()
-  },
-  methods: {
-    getSigevaData () {
-      this.sigevadata = {
-        articulos: [
+import Vue from 'vue'
+import Vuex from 'vuex'
+// import axios from 'axios'
+Vue.use(Vuex)
+export default new Vuex.Store({
+  state: {
+    sigevadata: {
+      articulos: [
         {
           titulo: `The Organization of Pessimism: Profane Illumination and Anthropological Materialism in Walter Benjamin`,
           autores: 'Ibarlucía, Ricardo',
@@ -142,7 +116,8 @@ export default {
         }
       ],
       libros: [
-        { titulo: `Hechos y valores en filosofía teórica, filosofía práctica y filosofía del arte`,
+        {
+          titulo: `Hechos y valores en filosofía teórica, filosofía práctica y filosofía del arte`,
           autores: 'Ibarlucía, Ricardo;  Perez, Diana',
           anio: '2016',
           editorial: 'Centro de Investigaciones Filosóficas/Sociedad Argentina de Análisis Filosófico',
@@ -319,26 +294,6 @@ export default {
           areadc: 'Filosofía, Ética y Religión'
         }
       ]
-    }}
-    //   axios
-    //   .get('http://localhost:8080/api/guin',
-    //     {params: {
-    //       cuil: this.cuil
-    //     }})
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err))
-    // }
+    }
   }
-}
-</script>
-<style>
-body {
-  font-family: 'Lato';
-}
-.application {
-  font-family: 'Lato';
-}
-.chart-container {
-  font-family: 'Lato';
-}
-</style>
+})
