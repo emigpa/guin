@@ -14,8 +14,8 @@
       <v-card-media class="pa-3" contain>
         <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors"></column-chart>
       </v-card-media>
-    </v-flex>
-  </v-layout>
+        </v-flex>
+      </v-layout>
     </v-card>
   </v-container>
 </template>
@@ -27,12 +27,13 @@ export default {
       stacked: {
         data: [
           {name: 'Artículos', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}},
-          {name: 'Libros', data: {'2014': 2, '2015': 2, '2016': 1, '2017': 2}},
-          {name: 'Capítulos de libro', data: {'2014': 2, '2015': 0, '2016': 1, '2017': 1}},
-          {name: 'Trabajos en eventos', data: {'2014': 1, '2015': 1, '2016': 1, '2017': 1}},
+          {name: 'Libros', data: {'2014': 1, '2015': 0, '2016': 0, '2017': 0}},
+          {name: 'Capítulos de libro', data: {'2014': 1, '2015': 0, '2016': 1, '2017': 0}},
+          {name: 'Trabajos en eventos', data: {'2014': 0, '2015': 0, '2016': 0, '2017': 0}},
           {name: 'Otras producciones científicas', data: {'2014': 5, '2015': 4, '2016': 4, '2017': 1}}
         ],
-        colors: ['#222831', '#003459', '#028090', '#02C39A', '#FCE38A']
+        colors: ['#4CAF50', '#F44336', '#9C27B0', '#2196F3', '#FFEB3B']
+        // colors: ['#222831', '#003459', '#028090', '#02C39A', '#FCE38A']
       },
       autor: 'Ricardo Ibarlucía',
       cantArticulos: 9,
@@ -44,22 +45,6 @@ export default {
           },
           {
             values: [2, 4, 1, 7]
-          }
-        ]
-      },
-      perData: {
-        labels: ['Filosofía, Ética y Religión', 'Lengua y Literatura'],
-        datasets: [
-          {
-            values: [8, 1]
-          }
-        ]
-      },
-      pieData: {
-        labels: ['Tópicos', 'Eadem utraque Europa', 'Revista latinoamericana de Filosofía', 'El ángel exterminador', 'Aisthesis. Pratiche, linguaggi e saperi dell?estetico', 'Lapsus Calami', 'Anuario del Instituto de Investigaciones sobre el Patrimonio Cultural'],
-        datasets: [
-          {
-            values: [1, 2, 1, 1, 2, 1, 1]
           }
         ]
       }
