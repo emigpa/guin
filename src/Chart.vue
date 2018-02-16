@@ -1,5 +1,5 @@
 <template>
-  <v-container wrap row>
+  <v-container fluid wrap row>
     <v-card height="100%" id="leftcard">
       <v-card-title class="pb-4" primary-title>
         <div>

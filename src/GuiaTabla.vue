@@ -1,5 +1,5 @@
 <template>
-  <v-container wrap align-center justify-center fill-height>
+  <v-container fluid wrap align-center justify-center fill-height>
     <v-card>
     <v-card-title>
       PRODUCCIÓN CIENTÍFICA
