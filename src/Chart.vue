@@ -5,7 +5,7 @@
           <h1 class="subheading">PRODUCCIÓN CIENTÍFICA</h1>
       </v-card-title>
           <v-card-media class="pa-3" contain>
-            <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors"></column-chart>
+            <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors" legend="right"></column-chart>
           </v-card-media>
     </v-card>
   </v-container>

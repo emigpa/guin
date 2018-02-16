@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue/dist/vue.min.js'
+import Vuex from 'vuex/dist/vuex.min.js'
 // import axios from 'axios'
 Vue.use(Vuex)
 export default new Vuex.Store({
