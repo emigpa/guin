@@ -24,30 +24,20 @@ export default {
   props: ['sigevaData'],
   data () {
     return {
+      // articulosLength: this.$store.state.articulosLength,
       stacked: {
         data: [
-          {name: 'Artículos', data: {'2014': 3, '2015': 3, '2016': 2, '2017': 1}},
-          {name: 'Libros', data: {'2014': 1, '2015': 0, '2016': 0, '2017': 0}},
-          {name: 'Capítulos de libro', data: {'2014': 1, '2015': 0, '2016': 1, '2017': 0}},
-          {name: 'Trabajos en eventos', data: {'2014': 0, '2015': 0, '2016': 0, '2017': 0}},
-          {name: 'Otras producciones científicas', data: {'2014': 5, '2015': 4, '2016': 4, '2017': 1}}
+          {name: 'Artículos', data: this.$store.state.articulosLength},
+          {name: 'Libros', data: this.$store.state.librosLength},
+          {name: 'Capítulos de libro', data: this.$store.state.pdlLength},
+          {name: 'Trabajos en eventos', data: this.$store.state.tepLength},
+          {name: 'Otras producciones científicas', data: this.$store.state.demLength}
         ],
         colors: ['#4CAF50', '#F44336', '#9C27B0', '#2196F3', '#FFEB3B']
         // colors: ['#222831', '#003459', '#028090', '#02C39A', '#FCE38A']
       },
       autor: 'Ricardo Ibarlucía',
-      cantArticulos: 9,
-      lineData: {
-        labels: ['2014', '2015', '2016', '2017'],
-        datasets: [
-          {
-            values: [3, 3, 2, 1]
-          },
-          {
-            values: [2, 4, 1, 7]
-          }
-        ]
-      }
+      cantArticulos: 9
     }
   }
 }
