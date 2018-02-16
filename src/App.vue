@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height align-center justify-center>
     <v-layout wrap row fill-height justify-center>
-      <v-flex xl12 lg12 md12 sm12 xs12>
+      <v-flex>
         <v-card>
           <chart>
           </chart>

@@ -1,8 +1,7 @@
 <template>
-  <v-container fluid wrap align-center justify-center fill-height>
+  <v-container fluid wrap align-center justify-center>
     <v-card>
     <v-card-title>
-      PRODUCCIÓN CIENTÍFICA
       <v-spacer></v-spacer>
       <v-btn-toggle v-model="button">
         <v-layout row justify-space-around>
