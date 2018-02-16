@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid>
-    <v-layout row justify-space-between>
+  <v-container fill-height align-center justify-center>
+    <v-layout wrap row fill-height justify-center>
       <v-flex xl8 lg10 md12 sm12 xs12>
         <v-card>
           <chart>

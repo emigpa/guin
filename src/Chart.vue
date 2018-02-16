@@ -1,19 +1,19 @@
 <template>
-  <v-container fluid>
+  <v-container wrap row>
     <v-card height="100%" id="leftcard">
       <v-card-title class="pb-4" primary-title>
         <div>
           <h1 class="headline">{{ autor }}</h1>
           <h2 class="subheading">Escuela de Humanidades</h2>
-          <h2 class="subheading">Artículos publicados: {{ cantArticulos }}</h2>
+          <!-- <h2 class="subheading">Artículos publicados: {{ cantArticulos }}</h2> -->
           <!-- <h2 class="subheading">Datos de SIGEVA-UNSAM</h2> -->
         </div>
       </v-card-title>
-      <v-layout row justify-space-around>
-        <v-flex xl8 lg8 md10 sm10 xs12>
-      <v-card-media class="pa-3" contain>
-        <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors"></column-chart>
-      </v-card-media>
+      <v-layout justify-center>
+        <v-flex xl6 lg6 md8 sm8 xs10>
+          <v-card-media class="pa-3" contain>
+            <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors"></column-chart>
+          </v-card-media>
         </v-flex>
       </v-layout>
     </v-card>
@@ -24,7 +24,6 @@ export default {
   props: ['sigevaData'],
   data () {
     return {
-      // articulosLength: this.$store.state.articulosLength,
       stacked: {
         data: [
           {name: 'Artículos', data: this.$store.state.articulosLength},
