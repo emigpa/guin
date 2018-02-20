@@ -234,9 +234,9 @@
 </template>
 <script>
 export default {
+  props: ['sigevadata'],
   data () {
     return {
-      sigevadata: this.$store.state.sigevadata,
       button: 0,
       currentpage: 1,
       pagination: {},

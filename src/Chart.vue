@@ -12,16 +12,16 @@
 </template>
 <script>
 export default {
-  props: ['sigevaData'],
+  props: ['sigevadata'],
   data () {
     return {
       stacked: {
         data: [
-          {name: 'Artículos', data: this.$store.state.articulosLength},
-          {name: 'Libros', data: this.$store.state.librosLength},
-          {name: 'Capítulos de libro', data: this.$store.state.pdlLength},
-          {name: 'Trabajos en eventos', data: this.$store.state.tepLength},
-          {name: 'Otras producciones científicas', data: this.$store.state.demLength}
+          {name: 'Artículos', data: this.sigevadata.articulosLength},
+          {name: 'Libros', data: this.sigevadata.librosLength},
+          {name: 'Capítulos de libro', data: this.sigevadata.pdlLength},
+          {name: 'Trabajos en eventos', data: this.sigevadata.tepLength},
+          {name: 'Otras producciones científicas', data: this.sigevadata.demLength}
         ],
         // colors: ['rgba(76, 175, 80, 0.8)', 'rgba(244, 67, 54, 0.8)', 'rgba(156, 39, 176, 0.8)', 'rgba(33, 150, 244, 0.8)', 'rgba(255, 235, 59, 0.8)']
         // colors: ['rgba(34, 40, 48, 0.8)', 'rgba(0, 52, 89, 0.8)', 'rgba(2, 128, 144, 0.8)', 'rgba(2, 195, 154, 0.8)', 'rgba(252, 228, 139, 0.8)']
