@@ -30,7 +30,7 @@ export default {
   },
   mounted () {
     // this.$store.dispatch('getSigevaData', '20147283475')
-    this.getSigevaData('20147283475')
+    this.getSigevaData(this.cuil)
   },
   methods: {
     getSigevaData (query) {
