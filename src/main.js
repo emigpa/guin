@@ -7,11 +7,10 @@ import VueChartkick from 'vue-chartkick'
 import Chart from 'chart.js/dist/Chart.min.js'
 
 Vue.use(Vuetify)
-Vue.use(VueChartkick, {
-  Chartkick
-})
-const querycuil = '20076607061'
-new Vue({
+Vue.use(VueChartkick, { Chartkick })
+const querycuil = document.getElementById('app').getAttribute('data-cuil')
+
+const app = new Vue({
   el: '#app',
   template: `
   <v-app>

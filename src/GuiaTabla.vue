@@ -4,8 +4,6 @@
     <v-card-title>
       <v-spacer></v-spacer>
       <v-btn-toggle v-model="button">
-        <v-layout row justify-space-around>
-          <v-flex sm12 xs12>
         <v-btn flat small @click="resetPage">
           Artículos
         </v-btn>
@@ -21,8 +19,6 @@
         <v-btn flat small @click="resetPage">
           Otras producciones científicas
         </v-btn>
-      </v-flex>
-      </v-layout>
       </v-btn-toggle>
   </v-card-title>
     <v-data-table
@@ -48,13 +44,19 @@
       <v-container grid-list-sm id="listdetail">
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
-            <v-flex xs6>
+            <v-flex xs5>
               <v-card-text>Revista: <em>{{ props.item.revista }}</em></br> País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
-            <v-flex xs6>
-              <v-card-text>ISSN: {{ props.item.issn }}</br> URL: {{ props.item.url }}</br> DOI: {{ props.item.doi }}
+            <v-flex xs4>
+              <v-card-text>ISSN: {{ props.item.issn }}</br>DOI: {{ props.item.doi }}</br>
               </v-card-text>
+            </v-flex>
+            <v-flex xs3 v-if="props.item.url">
+              ENLACE A LA PUBLICACIÓN:
+                <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-icon>link</v-icon>
+                </v-btn>
             </v-flex>
           </v-layout>
         </v-card>
@@ -89,12 +91,18 @@
       <v-container grid-list-sm id="listdetail">
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
-            <v-flex xs6>
+            <v-flex xs5>
               <v-card-text>País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
-            <v-flex xs6>
-              <v-card-text>ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            <v-flex xs4>
+              <v-card-text>ISBN: {{ props.item.isbn }}</v-card-text>
+            </v-flex>
+              <v-flex xs3 v-if="props.item.url">
+                ENLACE A LA PUBLICACIÓN:
+                  <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                    <v-icon>link</v-icon>
+                  </v-btn>
             </v-flex>
           </v-layout>
         </v-card>
@@ -129,12 +137,18 @@
       <v-container grid-list-sm id="listdetail">
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
-            <v-flex xs6>
+            <v-flex xs5>
               <v-card-text>Libro: <em>{{ props.item.libro }}</em></br>País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
-            <v-flex xs6>
-              <v-card-text>ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            <v-flex xs4>
+              <v-card-text>ISBN: {{ props.item.isbn }}</v-card-text>
+            </v-flex>
+            <v-flex xs3 v-if="props.item.url">
+              ENLACE A LA PUBLICACIÓN:
+                <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-icon>link</v-icon>
+                </v-btn>
             </v-flex>
           </v-layout>
         </v-card>
@@ -169,12 +183,18 @@
       <v-container grid-list-sm id="listdetail">
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
-            <v-flex xs6>
+            <v-flex xs5>
               <v-card-text>País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
-            <v-flex xs6>
-              <v-card-text>ISSN: {{ props.item.issn }}</br> ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            <v-flex xs4>
+              <v-card-text>ISSN: {{ props.item.issn }}</br> ISBN: {{ props.item.isbn }}</v-card-text>
+            </v-flex>
+            <v-flex xs3 v-if="props.item.url">
+              ENLACE A LA PUBLICACIÓN:
+                <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-icon>link</v-icon>
+                </v-btn>
             </v-flex>
           </v-layout>
         </v-card>
@@ -209,12 +229,18 @@
       <v-container grid-list-sm id="listdetail">
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
-            <v-flex xs6>
+            <v-flex xs5>
               <v-card-text>País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
-            <v-flex xs6>
-              <v-card-text>ISSN: {{ props.item.issn }}</br> ISBN: {{ props.item.isbn }}</br> URL: {{ props.item.url }}</v-card-text>
+            <v-flex xs4>
+              <v-card-text>ISSN: {{ props.item.issn }}</br> ISBN: {{ props.item.isbn }}</v-card-text>
+            </v-flex>
+            <v-flex xs3 v-if="props.item.url">
+              ENLACE A LA PUBLICACIÓN:
+                <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-icon>link</v-icon>
+                </v-btn>
             </v-flex>
           </v-layout>
         </v-card>
