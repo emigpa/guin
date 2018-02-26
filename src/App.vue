@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getSigevaData (query) {
-      axios.get(`http://10.1.69.63/api/guin`, {params: { cuil: query }})
+      axios.get(`http://sinos.unsam.edu.ar/api/guin`, {params: { cuil: query }})
       .then(res => {
         const sigevadata = res.data
         const getLength = (item, anio) => sigevadata[item].filter(x => x.anio === anio).length
