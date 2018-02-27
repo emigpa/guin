@@ -99,7 +99,7 @@
               <v-card-text>ISBN: {{ props.item.isbn }}</v-card-text>
             </v-flex>
               <v-flex xs3 v-if="props.item.url">
-                ENLACE A LA PUBLICACIÓN:
+                Enlace a la publicación:
                   <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
                     <v-icon>link</v-icon>
                   </v-btn>
