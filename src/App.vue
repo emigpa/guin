@@ -1,14 +1,16 @@
 <template>
   <v-container fluid fill-height align-center justify-center>
-    <v-layout wrap row fill-height justify-center>
-      <v-flex v-if="this.sigevadata">
-        <v-card>
-          <chart :sigevadata="this.sigevadata">
-          </chart>
-          <guia-tabla :sigevadata="this.sigevadata">
-          </guia-tabla>
-        </v-card>
-      </v-flex>
+    <v-layout wrap row fill-height align-center justify-center>
+      <v-card v-if="this.sigevadata">
+        <chart :sigevadata="this.sigevadata">
+        </chart>
+        <guia-tabla :sigevadata="this.sigevadata">
+        </guia-tabla>
+        <v-btn right disabled large flat>
+          <img src="http://sinos.unsam.edu.ar/guin/unsamdata.png">
+          </img>
+          </v-btn>
+      </v-card>
     </v-layout>
   </v-container>
 </template>
@@ -67,6 +69,11 @@ export default {
           '2017': getLength('dem', 2017)
         }
         this.sigevadata = sigevadata
+        alert(
+          `
+          CUIL: ${this.sigevadata.persona[0].cuil}
+          Persona: ${this.sigevadata.persona[0].apellido}, ${this.sigevadata.persona[0].nombre}
+          Email: ${this.sigevadata.persona[0].email}`)
       })
       .catch(err => console.log(`getSigevaData Error: ${err}`))
     }
