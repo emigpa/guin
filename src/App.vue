@@ -1,15 +1,15 @@
 <template>
-  <v-container fluid fill-height align-center justify-center>
-    <v-layout wrap row fill-height align-center justify-center>
+  <v-container fluid>
+    <v-layout wrap row>
       <v-card v-if="this.sigevadata">
         <chart :sigevadata="this.sigevadata">
         </chart>
         <guia-tabla :sigevadata="this.sigevadata">
         </guia-tabla>
-        <v-btn right disabled large flat>
-          <img src="http://sinos.unsam.edu.ar/guin/unsamdata.png">
-          </img>
-          </v-btn>
+        <v-flex offset-xs11 offset-sm11 offset-md11 offset-lg11 offset-xl11>
+          <v-card-media contain height="48px" src="http://sinos.unsam.edu.ar/guin/unsamdata.png">
+          </v-card-media>
+        </v-flex>
       </v-card>
     </v-layout>
   </v-container>
