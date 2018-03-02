@@ -69,7 +69,7 @@ export default {
           '2017': getLength('dem', 2017)
         }
         this.sigevadata = sigevadata
-        alert(
+        console.log(
           `
           CUIL: ${this.sigevadata.persona[0].cuil}
           Persona: ${this.sigevadata.persona[0].apellido}, ${this.sigevadata.persona[0].nombre}
