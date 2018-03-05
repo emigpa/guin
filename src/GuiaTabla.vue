@@ -265,7 +265,7 @@ export default {
     return {
       button: 0,
       currentpage: 1,
-      pagination: {},
+      pagination: {'sortBy': 'anio', 'descending': true},
       selected: ['articulos', 'libros', 'pdl', 'tep', 'dem'],
       headers: [
         {
@@ -317,5 +317,8 @@ export default {
 <style>
 .datatable__expand-content {
   background-color: #CFD8DC;
+}
+tbody {
+  cursor: pointer;
 }
 </style>
