@@ -23,7 +23,7 @@
   </v-card-title>
     <v-data-table
       v-if="button === 0"
-      :headers="headers"
+      :headers="headersArt"
       :items="this.sigevadata.articulos"
       :pagination.sync="pagination"
       class="elevation-3"
@@ -36,7 +36,7 @@
         <v-icon v-if="props.expanded">expand_less</v-icon>
         <td>{{ props.item.titulo }}</td>
         <td>{{ props.item.autores }}</td>
-        <td>{{ props.item.editorial }}</td>
+        <td>{{ props.item.revista }}</td>
         <td>{{ props.item.anio }}</td>
       </tr>
     </template>
@@ -45,7 +45,7 @@
         <v-card flat class="blue-grey lighten-4">
           <v-layout row wrap>
             <v-flex xs5>
-              <v-card-text>Revista: <em>{{ props.item.revista }}</em></br> País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
+              <v-card-text>Editorial: <em>{{ props.item.editorial }}</em></br> País: <em>{{ props.item.pais }}</em></br> Área de conocimiento: <em>{{ props.item.areadc }}</em>
               </v-card-text>
             </v-flex>
             <v-flex xs4>
@@ -208,7 +208,7 @@
     </v-data-table>
     <v-data-table
     v-if="button === 4"
-      :headers="headers"
+      :headers="headersDem"
       :items="this.sigevadata.dem"
       :pagination.sync="pagination"
       class="elevation-3"
@@ -221,7 +221,6 @@
         <v-icon v-if="props.expanded">expand_less</v-icon>
         <td>{{ props.item.titulo }}</td>
         <td>{{ props.item.autores }}</td>
-        <td>{{ props.item.editorial }}</td>
         <td>{{ props.item.anio }}</td>
       </tr>
     </template>
@@ -291,6 +290,64 @@ export default {
           align: 'left',
           sortable: true,
           value: 'editorial'
+        },
+        {
+          text: 'Año de publicación',
+          align: 'left',
+          sortable: true,
+          value: 'anio'
+        }
+      ],
+      headersArt: [
+        {
+          text: '',
+          align: 'left',
+          sortable: false,
+          value: ''
+        },
+        {
+          text: 'Título',
+          align: 'left',
+          sortable: false,
+          value: 'titulo'
+        },
+        {
+          text: 'Autores',
+          align: 'left',
+          sortable: false,
+          value: 'autores'
+        },
+        {
+          text: 'Revista',
+          align: 'left',
+          sortable: true,
+          value: 'revista'
+        },
+        {
+          text: 'Año de publicación',
+          align: 'left',
+          sortable: true,
+          value: 'anio'
+        }
+      ],
+      headersDem: [
+        {
+          text: '',
+          align: 'left',
+          sortable: false,
+          value: ''
+        },
+        {
+          text: 'Título',
+          align: 'left',
+          sortable: false,
+          value: 'titulo'
+        },
+        {
+          text: 'Autores',
+          align: 'left',
+          sortable: false,
+          value: 'autores'
         },
         {
           text: 'Año de publicación',
