@@ -2,7 +2,7 @@
   <v-container fluid wrap align-center justify-center>
     <v-card id="leftcard">
       <v-card-title class="pb-4" primary-title>
-          <h1 class="subheading">PRODUCCIÓN CIENTÍFICA</h1>
+          <h1 class="subheading">PUBLICACIONES</h1>
       </v-card-title>
           <v-card-media class="pl-5 pr-5 pb-3 pt-3" contain>
             <column-chart :stacked="true" :data="stacked.data" :colors="stacked.colors" legend="right"></column-chart>
