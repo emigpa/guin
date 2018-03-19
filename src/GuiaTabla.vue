@@ -2,6 +2,7 @@
   <v-container fluid wrap align-center justify-center>
     <v-card>
     <v-card-title>
+          <h1 class="subheading">PUBLICACIONES</h1>
       <v-spacer></v-spacer>
       <v-btn-toggle v-model="button">
         <v-btn flat small @click="resetPage">

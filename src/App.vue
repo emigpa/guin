@@ -2,10 +2,10 @@
   <v-container fluid>
     <v-layout wrap row>
       <v-card v-if="this.sigevadata">
-        <chart :sigevadata="this.sigevadata">
-        </chart>
         <guia-tabla :sigevadata="this.sigevadata">
         </guia-tabla>
+        <chart :sigevadata="this.sigevadata">
+        </chart>
         <v-flex offset-xs11 offset-sm11 offset-md11 offset-lg11 offset-xl11>
           <v-card-media contain height="48px" src="http://sinos.unsam.edu.ar/guin/unsamdata.png">
           </v-card-media>
