@@ -65,7 +65,7 @@
     </template>
     <template slot="no-data">
       <v-alert :value="true" color="secondary" icon="warning">
-        No se encontraron artículos publicados en el período 2014-2017.
+        No se encontraron artículos publicados en el período 2014-2018.
       </v-alert>
     </template>
     </v-data-table>
@@ -111,7 +111,7 @@
     </template>
     <template slot="no-data">
       <v-alert :value="true" color="secondary" icon="warning">
-        No se encontraron libros publicados en el período 2014-2017.
+        No se encontraron libros publicados en el período 2014-2018.
       </v-alert>
     </template>
     </v-data-table>
@@ -157,7 +157,7 @@
     </template>
     <template slot="no-data">
       <v-alert :value="true" color="secondary" icon="warning">
-        No se encontraron capítulos de libro publicados en el período 2014-2017.
+        No se encontraron capítulos de libro publicados en el período 2014-2018.
       </v-alert>
     </template>
     </v-data-table>
@@ -203,7 +203,7 @@
     </template>
     <template slot="no-data">
       <v-alert :value="true" color="secondary" icon="warning">
-        No se encontraron trabajos en eventos publicados en el período 2014-2017.
+        No se encontraron trabajos en eventos publicados en el período 2014-2018.
       </v-alert>
     </template>
     </v-data-table>
@@ -248,7 +248,7 @@
     </template>
     <template slot="no-data">
       <v-alert :value="true" color="secondary" icon="warning">
-        No se encontraron otras producciones científicas publicadas en el período 2014-2017.
+        No se encontraron otras producciones científicas publicadas en el período 2014-2018.
       </v-alert>
     </template>
     </v-data-table>

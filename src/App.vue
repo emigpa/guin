@@ -6,10 +6,6 @@
         </guia-tabla>
         <chart :sigevadata="this.sigevadata">
         </chart>
-        <v-flex offset-xs11 offset-sm11 offset-md11 offset-lg11 offset-xl11>
-          <v-card-media contain height="48px" src="http://sinos.unsam.edu.ar/guin/unsamdata.png">
-          </v-card-media>
-        </v-flex>
       </v-card>
     </v-layout>
   </v-container>
@@ -74,11 +70,11 @@ export default {
           '2018': getLength('dem', 2018)
         }
         this.sigevadata = sigevadata
-        console.log(
-          `
-          CUIL: ${this.sigevadata.persona[0].cuil}
-          Persona: ${this.sigevadata.persona[0].apellido}, ${this.sigevadata.persona[0].nombre}
-          Email: ${this.sigevadata.persona[0].email}`)
+        // console.log(
+        //   `
+        //   CUIL: ${this.sigevadata.persona[0].cuil}
+        //   Persona: ${this.sigevadata.persona[0].apellido}, ${this.sigevadata.persona[0].nombre}
+        //   Email: ${this.sigevadata.persona[0].email}`)
       })
       .catch(err => console.log(`getSigevaData Error: ${err}`))
     }

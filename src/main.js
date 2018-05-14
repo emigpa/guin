@@ -1,12 +1,33 @@
 import Vue from 'vue/dist/vue.min.js'
-import Vuetify from 'vuetify/dist/vuetify.min.js'
 import App from './App.vue'
 import 'vuetify/dist/vuetify.min.css'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
 import Chart from 'chart.js/dist/Chart.min.js'
+import {
+  Vuetify,
+  VApp,
+  VCard,
+  VGrid,
+  VBtn,
+  VIcon,
+  VDataTable,
+  VAlert,
+  VBtnToggle
+} from 'vuetify'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  components: {
+    VApp,
+    VCard,
+    VGrid,
+    VBtn,
+    VIcon,
+    VDataTable,
+    VAlert,
+    VBtnToggle
+  }
+})
 Vue.use(VueChartkick, { Chartkick })
 const querycuil = document.getElementById('app').getAttribute('data-cuil')
 
