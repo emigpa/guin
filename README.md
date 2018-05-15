@@ -1,18 +1,17 @@
-# guia-investigadores
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
 ```
+____|               _)
+__|      __ `__ \    |    _` |   __ \     _` |
+|        |   |   |   |   (   |   |   |   (   |
+_____|  _|  _|  _|  _|  \__, |   .__/   \__,_|
+                        |___/   _|
+```
+## GUIN: **GU**ia (de) **IN**vestigadores.
+---
+Datatable and barchart that shows research publications querying SIGEVA database.
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Created using:
+- https://vuejs.org/
+- https://vuetifyjs.com/
+- https://www.chartkick.com/
+- https://webpack.js.org/
+- https://github.com/axios/axios

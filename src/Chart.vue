@@ -20,7 +20,13 @@ export default {
           {name: 'Trabajos en eventos', data: this.sigevadata.tepLength},
           {name: 'Otras producciones científicas', data: this.sigevadata.demLength}
         ],
-        colors: ["rgba(37, 47, 48, 0.80)", "rgba(49, 86, 89, 0.80)","rgba(41, 119, 159, 0.80)","rgba(187, 171, 121, 0.80)","rgba(198, 224, 255, 0.80)"],
+        colors: [
+          'rgba(37, 47, 48, 0.80)',
+          'rgba(49, 86, 89, 0.80)',
+          'rgba(41, 119, 159, 0.80)',
+          'rgba(187, 171, 121, 0.80)',
+          'rgba(198, 224, 255, 0.80)'
+        ],
         options: { scales:
           { yAxes:
             [{ ticks: {
@@ -33,5 +39,4 @@ export default {
     }
   }
 }
-
 </script>
