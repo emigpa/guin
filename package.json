@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "chart.js": "^2.7.1",
+    "chart.js": "^2.7.2",
     "chartkick": "^2.2.4",
     "vue": "^2.5.13",
     "vue-chartkick": "^0.2.0",
