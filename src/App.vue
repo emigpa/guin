@@ -6,10 +6,10 @@
         </guia-tabla>
         <chart :sigevadata="this.sigevadata">
         </chart>
-        <v-card-media>
+        <v-card-media class="pr-3 pb-3">
           <v-spacer></v-spacer>
           <a href="https://github.com/emigpa/guin" target="_blank">
-          <img class="pr-3" alt="github.com/emigpa/guin" src="http://sinos.unsam.edu.ar/guin/github.png"></img>
+          <img alt="github.com/emigpa/guin" src="http://sinos.unsam.edu.ar/guin/github.png"></img>
         </a>
         </v-card-media>
       </v-card>
