@@ -2,15 +2,18 @@
   <v-container fluid>
     <v-layout wrap row>
       <v-card v-if="this.sigevadata">
-        <guia-tabla :sigevadata="this.sigevadata">
-        </guia-tabla>
+        <v-card-title>
+          <h1 class="subheading">PUBLICACIONES</h1>
+        </v-card-title>
         <chart :sigevadata="this.sigevadata">
         </chart>
+        <guia-tabla :sigevadata="this.sigevadata">
+        </guia-tabla>
         <v-card-media class="pr-3 pb-3">
           <v-spacer></v-spacer>
           <a href="https://github.com/emigpa/guin" target="_blank">
-          <img alt="github.com/emigpa/guin" src="http://sinos.unsam.edu.ar/guin/github.png"></img>
-        </a>
+            <img alt="github.com/emigpa/guin" src="http://sinos.unsam.edu.ar/guin/github.png"></img>
+          </a>
         </v-card-media>
       </v-card>
     </v-layout>
@@ -23,23 +26,25 @@ import Chart from './Chart.vue'
 export default {
   components: {
     'guia-tabla': GuiaTabla,
-    'chart': Chart
+    chart: Chart
   },
   props: ['cuil'],
-  data () {
+  data() {
     return {
       sigevadata: false
     }
   },
-  mounted () {
+  mounted() {
     this.getSigevaData(this.cuil)
   },
   methods: {
-    getSigevaData (query) {
-      axios.get(`http://sinos.unsam.edu.ar/api/guin`, {params: { cuil: query }})
+    getSigevaData(query) {
+      axios
+        .get(`http://sinos.unsam.edu.ar/api/guin`, { params: { cuil: query } })
         .then(res => {
           const sigevadata = res.data
-          const getLength = (item, anio) => sigevadata[item].filter(x => x.anio === anio).length
+          const getLength = (item, anio) =>
+            sigevadata[item].filter(x => x.anio === anio).length
           sigevadata.articulosLength = {
             '2014': getLength('articulos', 2014),
             '2015': getLength('articulos', 2015),
