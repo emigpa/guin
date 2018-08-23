@@ -13,7 +13,8 @@ import {
   VIcon,
   VDataTable,
   VAlert,
-  VBtnToggle
+  VBtnToggle,
+  VPagination
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -25,7 +26,8 @@ Vue.use(Vuetify, {
     VIcon,
     VDataTable,
     VAlert,
-    VBtnToggle
+    VBtnToggle,
+    VPagination
   }
 })
 Vue.use(VueChartkick, { Chartkick })
