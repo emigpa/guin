@@ -1,28 +1,64 @@
 <template>
-  <v-container fluid wrap align-center justify-center>
+  <v-container
+    fluid
+    wrap
+    align-center
+    justify-center
+  >
     <v-card>
       <v-card-title>
         <v-spacer></v-spacer>
         <v-btn-toggle v-model="button">
-          <v-btn flat small @click="resetPage">
+          <v-btn
+            flat
+            small
+            @click="resetPage"
+          >
             Artículos
           </v-btn>
-          <v-btn flat small @click="resetPage">
+          <v-btn
+            flat
+            small
+            @click="resetPage"
+          >
             Libros
           </v-btn>
-          <v-btn flat small @click="resetPage">
+          <v-btn
+            flat
+            small
+            @click="resetPage"
+          >
             Capítulos de libro
           </v-btn>
-          <v-btn flat small @click="resetPage">
+          <v-btn
+            flat
+            small
+            @click="resetPage"
+          >
             Trabajos en eventos
           </v-btn>
-          <v-btn flat small @click="resetPage">
+          <v-btn
+            flat
+            small
+            @click="resetPage"
+          >
             Otras producciones científicas
           </v-btn>
         </v-btn-toggle>
       </v-card-title>
-      <v-data-table v-if="button === 0" :headers="headersArt" :items="this.sigevadata.articulos" :pagination.sync="pagination" class="elevation-3" item-key="titulo" hide-actions>
-        <template slot="items" slot-scope="props">
+      <v-data-table
+        v-if="button === 0"
+        :headers="headersArt"
+        :items="this.sigevadata.articulos"
+        :pagination.sync="pagination"
+        class="elevation-3"
+        item-key="titulo"
+        hide-actions
+      >
+        <template
+          slot="items"
+          slot-scope="props"
+        >
           <tr @click="props.expanded = !props.expanded">
             <v-icon v-if="!props.expanded">expand_more</v-icon>
             <v-icon v-if="props.expanded">expand_less</v-icon>
@@ -32,10 +68,22 @@
             <td>{{ props.item.anio }}</td>
           </tr>
         </template>
-        <template slot="expand" slot-scope="props">
-          <v-container grid-list-sm id="listdetail">
-            <v-card flat class="blue-grey lighten-4">
-              <v-layout row wrap>
+        <template
+          slot="expand"
+          slot-scope="props"
+        >
+          <v-container
+            grid-list-sm
+            id="listdetail"
+          >
+            <v-card
+              flat
+              class="blue-grey lighten-4"
+            >
+              <v-layout
+                row
+                wrap
+              >
                 <v-flex xs5>
                   <v-card-text>Editorial:
                     <em>{{ props.item.editorial }}</em>
@@ -49,9 +97,20 @@
                   <v-card-text>ISSN: {{ props.item.issn }}</br>DOI: {{ props.item.doi }}</br>
                   </v-card-text>
                 </v-flex>
-                <v-flex xs3 v-if="props.item.url">
+                <v-flex
+                  xs3
+                  v-if="props.item.url"
+                >
                   Enlace a la publicación:
-                  <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-btn
+                    :href="props.item.url"
+                    target="_blank"
+                    small
+                    flat
+                    icon
+                    outline
+                    color="blue"
+                  >
                     <v-icon>link</v-icon>
                   </v-btn>
                 </v-flex>
@@ -60,13 +119,28 @@
           </v-container>
         </template>
         <template slot="no-data">
-          <v-alert :value="true" color="secondary" icon="warning">
-            No se encontraron artículos publicados en el período 2014-2018.
+          <v-alert
+            :value="true"
+            color="secondary"
+            icon="warning"
+          >
+            No se encontraron artículos publicados en el último quinquenio.
           </v-alert>
         </template>
       </v-data-table>
-      <v-data-table v-if="button === 1" :headers="headers" :items="this.sigevadata.libros" :pagination.sync="pagination" class="elevation-3" item-key="titulo" hide-actions>
-        <template slot="items" slot-scope="props">
+      <v-data-table
+        v-if="button === 1"
+        :headers="headers"
+        :items="this.sigevadata.libros"
+        :pagination.sync="pagination"
+        class="elevation-3"
+        item-key="titulo"
+        hide-actions
+      >
+        <template
+          slot="items"
+          slot-scope="props"
+        >
           <tr @click="props.expanded = !props.expanded">
             <v-icon v-if="!props.expanded">expand_more</v-icon>
             <v-icon v-if="props.expanded">expand_less</v-icon>
@@ -76,10 +150,22 @@
             <td>{{ props.item.anio }}</td>
           </tr>
         </template>
-        <template slot="expand" slot-scope="props">
-          <v-container grid-list-sm id="listdetail">
-            <v-card flat class="blue-grey lighten-4">
-              <v-layout row wrap>
+        <template
+          slot="expand"
+          slot-scope="props"
+        >
+          <v-container
+            grid-list-sm
+            id="listdetail"
+          >
+            <v-card
+              flat
+              class="blue-grey lighten-4"
+            >
+              <v-layout
+                row
+                wrap
+              >
                 <v-flex xs5>
                   <v-card-text>País:
                     <em>{{ props.item.pais }}</em>
@@ -90,9 +176,20 @@
                 <v-flex xs4>
                   <v-card-text>ISBN: {{ props.item.isbn }}</v-card-text>
                 </v-flex>
-                <v-flex xs3 v-if="props.item.url">
+                <v-flex
+                  xs3
+                  v-if="props.item.url"
+                >
                   Enlace a la publicación:
-                  <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-btn
+                    :href="props.item.url"
+                    target="_blank"
+                    small
+                    flat
+                    icon
+                    outline
+                    color="blue"
+                  >
                     <v-icon>link</v-icon>
                   </v-btn>
                 </v-flex>
@@ -101,13 +198,28 @@
           </v-container>
         </template>
         <template slot="no-data">
-          <v-alert :value="true" color="secondary" icon="warning">
-            No se encontraron libros publicados en el período 2014-2018.
+          <v-alert
+            :value="true"
+            color="secondary"
+            icon="warning"
+          >
+            No se encontraron libros publicados en el último quinquenio.
           </v-alert>
         </template>
       </v-data-table>
-      <v-data-table v-if="button === 2" :headers="headers" :items="this.sigevadata.pdl" :pagination.sync="pagination" class="elevation-3" item-key="titulo" hide-actions>
-        <template slot="items" slot-scope="props">
+      <v-data-table
+        v-if="button === 2"
+        :headers="headers"
+        :items="this.sigevadata.pdl"
+        :pagination.sync="pagination"
+        class="elevation-3"
+        item-key="titulo"
+        hide-actions
+      >
+        <template
+          slot="items"
+          slot-scope="props"
+        >
           <tr @click="props.expanded = !props.expanded">
             <v-icon v-if="!props.expanded">expand_more</v-icon>
             <v-icon v-if="props.expanded">expand_less</v-icon>
@@ -117,10 +229,22 @@
             <td>{{ props.item.anio }}</td>
           </tr>
         </template>
-        <template slot="expand" slot-scope="props">
-          <v-container grid-list-sm id="listdetail">
-            <v-card flat class="blue-grey lighten-4">
-              <v-layout row wrap>
+        <template
+          slot="expand"
+          slot-scope="props"
+        >
+          <v-container
+            grid-list-sm
+            id="listdetail"
+          >
+            <v-card
+              flat
+              class="blue-grey lighten-4"
+            >
+              <v-layout
+                row
+                wrap
+              >
                 <v-flex xs5>
                   <v-card-text>Libro:
                     <em>{{ props.item.libro }}</em>
@@ -133,9 +257,20 @@
                 <v-flex xs4>
                   <v-card-text>ISBN: {{ props.item.isbn }}</v-card-text>
                 </v-flex>
-                <v-flex xs3 v-if="props.item.url">
+                <v-flex
+                  xs3
+                  v-if="props.item.url"
+                >
                   Enlace a la publicación:
-                  <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-btn
+                    :href="props.item.url"
+                    target="_blank"
+                    small
+                    flat
+                    icon
+                    outline
+                    color="blue"
+                  >
                     <v-icon>link</v-icon>
                   </v-btn>
                 </v-flex>
@@ -144,13 +279,28 @@
           </v-container>
         </template>
         <template slot="no-data">
-          <v-alert :value="true" color="secondary" icon="warning">
-            No se encontraron capítulos de libro publicados en el período 2014-2018.
+          <v-alert
+            :value="true"
+            color="secondary"
+            icon="warning"
+          >
+            No se encontraron capítulos de libro publicados en el último quinquenio.
           </v-alert>
         </template>
       </v-data-table>
-      <v-data-table v-if="button === 3" :headers="headers" :items="this.sigevadata.tep" :pagination.sync="pagination" class="elevation-3" item-key="titulo" hide-actions>
-        <template slot="items" slot-scope="props">
+      <v-data-table
+        v-if="button === 3"
+        :headers="headers"
+        :items="this.sigevadata.tep"
+        :pagination.sync="pagination"
+        class="elevation-3"
+        item-key="titulo"
+        hide-actions
+      >
+        <template
+          slot="items"
+          slot-scope="props"
+        >
           <tr @click="props.expanded = !props.expanded">
             <v-icon v-if="!props.expanded">expand_more</v-icon>
             <v-icon v-if="props.expanded">expand_less</v-icon>
@@ -160,10 +310,22 @@
             <td>{{ props.item.anio }}</td>
           </tr>
         </template>
-        <template slot="expand" slot-scope="props">
-          <v-container grid-list-sm id="listdetail">
-            <v-card flat class="blue-grey lighten-4">
-              <v-layout row wrap>
+        <template
+          slot="expand"
+          slot-scope="props"
+        >
+          <v-container
+            grid-list-sm
+            id="listdetail"
+          >
+            <v-card
+              flat
+              class="blue-grey lighten-4"
+            >
+              <v-layout
+                row
+                wrap
+              >
                 <v-flex xs5>
                   <v-card-text>País:
                     <em>{{ props.item.pais }}</em>
@@ -174,9 +336,20 @@
                 <v-flex xs4>
                   <v-card-text>ISSN: {{ props.item.issn }}</br> ISBN: {{ props.item.isbn }}</v-card-text>
                 </v-flex>
-                <v-flex xs3 v-if="props.item.url">
+                <v-flex
+                  xs3
+                  v-if="props.item.url"
+                >
                   Enlace a la publicación:
-                  <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-btn
+                    :href="props.item.url"
+                    target="_blank"
+                    small
+                    flat
+                    icon
+                    outline
+                    color="blue"
+                  >
                     <v-icon>link</v-icon>
                   </v-btn>
                 </v-flex>
@@ -185,13 +358,28 @@
           </v-container>
         </template>
         <template slot="no-data">
-          <v-alert :value="true" color="secondary" icon="warning">
-            No se encontraron trabajos en eventos publicados en el período 2014-2018.
+          <v-alert
+            :value="true"
+            color="secondary"
+            icon="warning"
+          >
+            No se encontraron trabajos en eventos publicados en el último quinquenio.
           </v-alert>
         </template>
       </v-data-table>
-      <v-data-table v-if="button === 4" :headers="headersDem" :items="this.sigevadata.dem" :pagination.sync="pagination" class="elevation-3" item-key="titulo" hide-actions>
-        <template slot="items" slot-scope="props">
+      <v-data-table
+        v-if="button === 4"
+        :headers="headersDem"
+        :items="this.sigevadata.dem"
+        :pagination.sync="pagination"
+        class="elevation-3"
+        item-key="titulo"
+        hide-actions
+      >
+        <template
+          slot="items"
+          slot-scope="props"
+        >
           <tr @click="props.expanded = !props.expanded">
             <v-icon v-if="!props.expanded">expand_more</v-icon>
             <v-icon v-if="props.expanded">expand_less</v-icon>
@@ -200,10 +388,22 @@
             <td>{{ props.item.anio }}</td>
           </tr>
         </template>
-        <template slot="expand" slot-scope="props">
-          <v-container grid-list-sm id="listdetail">
-            <v-card flat class="blue-grey lighten-4">
-              <v-layout row wrap>
+        <template
+          slot="expand"
+          slot-scope="props"
+        >
+          <v-container
+            grid-list-sm
+            id="listdetail"
+          >
+            <v-card
+              flat
+              class="blue-grey lighten-4"
+            >
+              <v-layout
+                row
+                wrap
+              >
                 <v-flex xs5>
                   <v-card-text>País:
                     <em>{{ props.item.pais }}</em>
@@ -214,9 +414,20 @@
                 <v-flex xs4>
                   <v-card-text>ISSN: {{ props.item.issn }}</br> ISBN: {{ props.item.isbn }}</v-card-text>
                 </v-flex>
-                <v-flex xs3 v-if="props.item.url">
+                <v-flex
+                  xs3
+                  v-if="props.item.url"
+                >
                   Enlace a la publicación:
-                  <v-btn :href="props.item.url" target="_blank" small flat icon outline color="blue">
+                  <v-btn
+                    :href="props.item.url"
+                    target="_blank"
+                    small
+                    flat
+                    icon
+                    outline
+                    color="blue"
+                  >
                     <v-icon>link</v-icon>
                   </v-btn>
                 </v-flex>
@@ -225,13 +436,21 @@
           </v-container>
         </template>
         <template slot="no-data">
-          <v-alert :value="true" color="secondary" icon="warning">
-            No se encontraron otras producciones científicas publicadas en el período 2014-2018.
+          <v-alert
+            :value="true"
+            color="secondary"
+            icon="warning"
+          >
+            No se encontraron otras producciones científicas publicadas en el último quinquenio.
           </v-alert>
         </template>
       </v-data-table>
       <div class="text-xs-center pt-2">
-        <v-pagination v-model="pagination.page" :length="pages" :value="1"></v-pagination>
+        <v-pagination
+          v-model="pagination.page"
+          :length="pages"
+          :value="1"
+        ></v-pagination>
       </div>
     </v-card>
   </v-container>
@@ -239,7 +458,7 @@
 <script>
 export default {
   props: ['sigevadata'],
-  data() {
+  data () {
     return {
       button: 0,
       currentpage: 1,
@@ -338,14 +557,14 @@ export default {
     }
   },
   computed: {
-    pages() {
+    pages () {
       return this.sigevadata[this.selected[this.button]].length > 0
         ? Math.ceil(this.sigevadata[this.selected[this.button]].length / 5)
         : 0
     }
   },
   methods: {
-    resetPage() {
+    resetPage () {
       this.pagination.page = 1
     }
   }

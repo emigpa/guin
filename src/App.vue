@@ -1,6 +1,9 @@
 <template>
   <v-container fluid>
-    <v-layout wrap row>
+    <v-layout
+      wrap
+      row
+    >
       <v-card v-if="this.sigevadata">
         <v-card-title>
           <h1 class="subheading">PUBLICACIONES</h1>
@@ -11,8 +14,14 @@
         </guia-tabla>
         <v-card-media class="pr-3 pb-3">
           <v-spacer></v-spacer>
-          <a href="https://github.com/emigpa/guin" target="_blank">
-            <img alt="github.com/emigpa/guin" src="http://sinos.unsam.edu.ar/guin/github.png"></img>
+          <a
+            href="https://github.com/emigpa/guin"
+            target="_blank"
+          >
+            <img
+              alt="github.com/emigpa/guin"
+              src="http://sinos.unsam.edu.ar/guin/github.png"
+            ></img>
           </a>
         </v-card-media>
       </v-card>
@@ -29,16 +38,16 @@ export default {
     chart: Chart
   },
   props: ['cuil'],
-  data() {
+  data () {
     return {
       sigevadata: false
     }
   },
-  mounted() {
+  mounted () {
     this.getSigevaData(this.cuil)
   },
   methods: {
-    getSigevaData(query) {
+    getSigevaData (query) {
       axios
         .get(`http://sinos.unsam.edu.ar/api/guin`, { params: { cuil: query } })
         .then(res => {
@@ -50,35 +59,40 @@ export default {
             '2015': getLength('articulos', 2015),
             '2016': getLength('articulos', 2016),
             '2017': getLength('articulos', 2017),
-            '2018': getLength('articulos', 2018)
+            '2018': getLength('articulos', 2018),
+            '2019': getLength('articulos', 2019)
           }
           sigevadata.librosLength = {
             '2014': getLength('libros', 2014),
             '2015': getLength('libros', 2015),
             '2016': getLength('libros', 2016),
             '2017': getLength('libros', 2017),
-            '2018': getLength('libros', 2018)
+            '2018': getLength('libros', 2018),
+            '2018': getLength('libros', 2019)
           }
           sigevadata.pdlLength = {
             '2014': getLength('pdl', 2014),
             '2015': getLength('pdl', 2015),
             '2016': getLength('pdl', 2016),
             '2017': getLength('pdl', 2017),
-            '2018': getLength('pdl', 2018)
+            '2018': getLength('pdl', 2018),
+            '2018': getLength('pdl', 2019)
           }
           sigevadata.tepLength = {
             '2014': getLength('tep', 2014),
             '2015': getLength('tep', 2015),
             '2016': getLength('tep', 2016),
             '2017': getLength('tep', 2017),
-            '2018': getLength('tep', 2018)
+            '2018': getLength('tep', 2018),
+            '2018': getLength('tep', 2019)
           }
           sigevadata.demLength = {
             '2014': getLength('dem', 2014),
             '2015': getLength('dem', 2015),
             '2016': getLength('dem', 2016),
             '2017': getLength('dem', 2017),
-            '2018': getLength('dem', 2018)
+            '2018': getLength('dem', 2018),
+            '2018': getLength('dem', 2019)
           }
           this.sigevadata = sigevadata
           // console.log(
@@ -94,12 +108,12 @@ export default {
 </script>
 <style>
 body {
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 .application {
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 .chart-container {
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 </style>
