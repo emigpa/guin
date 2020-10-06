@@ -20,7 +20,7 @@
           >
             <img
               alt="github.com/emigpa/guin"
-              src="http://sinos.unsam.edu.ar/guin/github.png"
+              src="https://sinos.unsam.edu.ar/guin/github.png"
             ></img>
           </a>
         </v-card-media>
@@ -49,7 +49,7 @@ export default {
   methods: {
     getSigevaData (query) {
       axios
-        .get(`http://sinos.unsam.edu.ar/api/guin`, { params: { cuil: query } })
+        .get(`https://sinos.unsam.edu.ar/api/guin`, { params: { cuil: query } })
         .then(res => {
           const sigevadata = res.data
           const getLength = (item, anio) =>
