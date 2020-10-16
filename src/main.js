@@ -1,48 +1,18 @@
-import Vue from 'vue/dist/vue.min.js'
+import Vue from 'vue'
 import App from './App.vue'
+import vuetify from './plugins/vuetify'
+import i18n from './i18n'
 import 'vuetify/dist/vuetify.min.css'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
+/* eslint-disable-next-line */
 import Chart from 'chart.js/dist/Chart.min.js'
-import {
-  Vuetify,
-  VApp,
-  VCard,
-  VGrid,
-  VBtn,
-  VIcon,
-  VDataTable,
-  VAlert,
-  VBtnToggle,
-  VPagination
-} from 'vuetify'
 
-Vue.use(Vuetify, {
-  components: {
-    VApp,
-    VCard,
-    VGrid,
-    VBtn,
-    VIcon,
-    VDataTable,
-    VAlert,
-    VBtnToggle,
-    VPagination
-  }
-})
 Vue.use(VueChartkick, { Chartkick })
-const querycuil = document.getElementById('app').getAttribute('data-cuil')
+Vue.config.productionTip = false
 
-const app = new Vue({
-  el: '#app',
-  template: `
-  <v-app>
-    <main>
-      <v-container fluid>
-      <App :cuil="${querycuil}"><App/>
-      </v-container>
-    </main>
-  </v-app>
-  `,
-  components: { App }
-})
+new Vue({
+  i18n,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
