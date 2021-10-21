@@ -26,7 +26,7 @@
             >
               <img
                 alt="github.com/emigpa/guin"
-                src="https://sinos.unsam.edu.ar/guin/github.png"
+                src="http://sinos.unsam.edu.ar/guin/github.png"
               >
             </a>
           </v-card-actions>
@@ -72,50 +72,50 @@ export default {
     },
     getSigevaData () {
       axios
-        .get('https://sinos.unsam.edu.ar/api/guin', { params: { cuil: this.querycuil } })
+        .get('http://sinos.unsam.edu.ar/api/guin', { params: { cuil: this.querycuil } })
         .then(res => {
           const sigevadata = res.data
           const getLength = (item, anio) =>
             sigevadata[item].filter(x => x.anio === anio).length
           sigevadata.articulosLength = {
-            2015: getLength('articulos', 2015),
             2016: getLength('articulos', 2016),
             2017: getLength('articulos', 2017),
             2018: getLength('articulos', 2018),
             2019: getLength('articulos', 2019),
-            2020: getLength('articulos', 2020)
+            2020: getLength('articulos', 2020),
+            2021: getLength('articulos', 2021)
           }
           sigevadata.librosLength = {
-            2015: getLength('libros', 2015),
             2016: getLength('libros', 2016),
             2017: getLength('libros', 2017),
             2018: getLength('libros', 2018),
             2019: getLength('libros', 2019),
-            2020: getLength('libros', 2020)
+            2020: getLength('libros', 2020),
+            2021: getLength('libros', 2021)
           }
           sigevadata.pdlLength = {
-            2015: getLength('pdl', 2015),
             2016: getLength('pdl', 2016),
             2017: getLength('pdl', 2017),
             2018: getLength('pdl', 2018),
             2019: getLength('pdl', 2019),
-            2020: getLength('pdl', 2020)
+            2020: getLength('pdl', 2020),
+            2021: getLength('pdl', 2021)
           }
           sigevadata.tepLength = {
-            2015: getLength('tep', 2015),
             2016: getLength('tep', 2016),
             2017: getLength('tep', 2017),
             2018: getLength('tep', 2018),
             2019: getLength('tep', 2019),
-            2020: getLength('tep', 2020)
+            2020: getLength('tep', 2020),
+            2021: getLength('tep', 2021)
           }
           sigevadata.demLength = {
-            2015: getLength('dem', 2015),
             2016: getLength('dem', 2016),
             2017: getLength('dem', 2017),
             2018: getLength('dem', 2018),
             2019: getLength('dem', 2019),
-            2020: getLength('dem', 2020)
+            2020: getLength('dem', 2020),
+            2021: getLength('dem', 2021)
           }
           this.sigevadata = sigevadata
           // console.log(
