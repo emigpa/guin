@@ -68,7 +68,9 @@ export default {
       this.$i18n.locale = this.lang
     },
     setCuil () {
-      this.querycuil = document.getElementById('cuilapp').getAttribute('data-cuil')
+      const params = new URLSearchParams(window.location.search)
+      const cuil = params.get('cuil')
+      this.querycuil = cuil
     },
     getSigevaData () {
       axios
