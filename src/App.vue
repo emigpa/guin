@@ -74,7 +74,7 @@ export default {
     },
     getSigevaData () {
       axios
-        .get('http://sinos.unsam.edu.ar/api/guin', { params: { cuil: this.querycuil } })
+        .get('http://sinos.unsam.edu.ar/sigeva/api/guin', { params: { cuil: this.querycuil } })
         .then(res => {
           const sigevadata = res.data
           const getLength = (item, anio) =>
