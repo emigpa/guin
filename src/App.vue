@@ -42,6 +42,7 @@
 import axios from 'axios'
 import GuiaTabla from './components/GuiaTabla'
 import Chart from './components/Chart'
+import { httpOrHttps } from './utils'
 export default {
   name: 'App',
   components: {
@@ -76,7 +77,7 @@ export default {
     },
     getSigevaData () {
       axios
-        .get('http://sinos.unsam.edu.ar/sigeva/api/guin', { params: { cuil: this.querycuil } })
+        .get(`${httpOrHttps}sinos.unsam.edu.ar/sigeva/api/guin`, { params: { cuil: this.querycuil } })
         .then(res => {
           const sigevadata = res.data
           const getLength = (item, anio) =>
